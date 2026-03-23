@@ -1,0 +1,29 @@
+{
+  "name": "baddiemagnet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "dev:mobile": "node dev-mobile.js && next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.93.2",
+    "@vercel/og": "^0.8.6",
+    "framer-motion": "^12.29.2",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18",
+    "resend": "^6.9.1",
+    "stripe": "^20.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8",
+    "qrcode-terminal": "^0.12.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
