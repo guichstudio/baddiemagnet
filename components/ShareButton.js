@@ -39,13 +39,13 @@ export default function ShareButton({ score }) {
   return (
     <div className="text-center mb-8">
       <p className="text-sm mb-3" style={{ color: "var(--text-70)" }}>
-        Send this test to your partner to compare your scores.
+        Send this test to your boys and compare pull game.
       </p>
       <button
         onClick={handleShare}
         className="btn-gradient px-6 py-3 rounded-xl text-white font-semibold text-base transition-colors"
       >
-        Share with partner
+        Share with a friend
       </button>
       <button
         onClick={copyLink}

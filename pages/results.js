@@ -512,23 +512,29 @@ export default function Results({ result, premium, error }) {
 
         {/* LOVE CHECK APP CTA */}
         <div className="mb-8">
-          <div className="rounded-2xl p-6 text-center overflow-hidden" style={{ background: "linear-gradient(180deg, rgba(236,72,153,0.40) 0%, rgba(139,0,0,0.60) 100%)" }}>
-            <p className="text-white/70 text-xs uppercase tracking-widest mb-2">Beta version</p>
-            <h2 className="font-heading text-2xl font-bold text-white mb-2">
-              LoveCheck App
-            </h2>
-            <p className="text-white/80 text-sm leading-relaxed mb-5">
-              Unlock the beta version to keep your girl and improve your relationship.
-            </p>
+          <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(249,115,22,0.25)" }}>
+            <div className="p-6 text-center" style={{ background: "linear-gradient(180deg, rgba(249,115,22,0.15) 0%, rgba(239,68,68,0.15) 100%)" }}>
+              <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-3">We recommend</p>
+              <h2 className="font-heading text-2xl font-bold text-white mb-3">
+                LoveCheck App
+              </h2>
+              <p className="text-white/80 text-sm leading-relaxed mb-2">
+                Got a girl? Keep her.
+              </p>
+              <p className="text-white/60 text-sm leading-relaxed mb-5">
+                Free exclusive app to improve your relationship at any stage. Daily missions, insights, and tools built by the same team.
+              </p>
 
-            <a
-              href="https://apps.apple.com/fr/app/love-check-app/id6755603323?l=en-GB"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-full px-5 py-3 rounded-xl bg-white text-[#B22222] font-bold text-base transition-colors hover:bg-gray-50"
-            >
-              Download on the App Store
-            </a>
+              <a
+                href="https://apps.apple.com/fr/app/love-check-app/id6755603323?l=en-GB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full px-5 py-3.5 rounded-xl bg-white font-bold text-base transition-all hover:scale-[1.02]"
+                style={{ color: "#EA580C" }}
+              >
+                Get it free on the App Store
+              </a>
+            </div>
           </div>
         </div>
 
