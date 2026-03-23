@@ -16,13 +16,13 @@ function buildMockSectionScores(globalScore) {
   // Create slightly varied dimension scores centered on globalScore
   const spread = Math.min(globalScore, 100 - globalScore, 10);
   return {
-    communication: Math.max(0, Math.min(100, globalScore + 3)),
-    trust: Math.max(0, Math.min(100, globalScore - 2)),
-    intimacy: Math.max(0, Math.min(100, globalScore + 1)),
-    desire: Math.max(0, Math.min(100, globalScore - spread)),
-    conflict: Math.max(0, Math.min(100, globalScore + 2)),
-    safety: Math.max(0, Math.min(100, globalScore - 1)),
-    vision: Math.max(0, Math.min(100, globalScore + spread - 3)),
+    confidence: Math.max(0, Math.min(100, globalScore + 3)),
+    style: Math.max(0, Math.min(100, globalScore - 2)),
+    social: Math.max(0, Math.min(100, globalScore + 1)),
+    communication: Math.max(0, Math.min(100, globalScore - spread)),
+    mentality: Math.max(0, Math.min(100, globalScore + 2)),
+    value: Math.max(0, Math.min(100, globalScore - 1)),
+    sexuality: Math.max(0, Math.min(100, globalScore + spread - 3)),
   };
 }
 
