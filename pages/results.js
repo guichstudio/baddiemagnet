@@ -138,14 +138,14 @@ export default function Results({ result, premium, error }) {
             <h2 className="font-heading text-xl font-semibold mb-2" style={{ color: "var(--text-100)" }}>Your Player Archetype</h2>
             <p className="text-pink-400 font-bold text-lg mb-3">{premium.archetype.name}</p>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-70)" }}>{premium.archetype.description}</p>
-            {tier.couple && (
+            {tier.reference && (
               <div className="pt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-                <p className="text-xs mb-3 uppercase tracking-wide" style={{ color: "var(--text-40)" }}>Famous player like you</p>
+                <p className="text-xs mb-3 uppercase tracking-wide" style={{ color: "var(--text-40)" }}>Your energy matches</p>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">{tier.couple.emoji}</span>
+                  <span className="text-2xl">{tier.reference.emoji}</span>
                   <div>
-                    <p className="text-sm font-medium" style={{ color: "var(--text-100)" }}>{tier.couple.couple}</p>
-                    <p className="text-xs" style={{ color: "var(--text-40)" }}>{tier.couple.source}</p>
+                    <p className="text-sm font-medium" style={{ color: "var(--text-100)" }}>{tier.reference.name}</p>
+                    <p className="text-xs" style={{ color: "var(--text-40)" }}>{tier.reference.source}</p>
                   </div>
                 </div>
               </div>
