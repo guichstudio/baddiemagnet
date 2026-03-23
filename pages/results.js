@@ -510,40 +510,16 @@ export default function Results({ result, premium, error }) {
           </div>
         )}
 
-        {/* FREE MONTH UNLOCK */}
-        <div className="mb-4 rounded-2xl p-4 text-center" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.15)" }}>
-          <p className="text-green-400 font-bold text-base mb-1">
-            🎁 You just unlocked 1 free month.
-          </p>
-          <p className="text-sm leading-relaxed" style={{ color: "var(--text-70)" }}>
-            Because you completed the quiz, you get full access to the BaddieMagnet app for 30 days. No card required. Claim it below.
-          </p>
-        </div>
-
         {/* LOVE CHECK APP CTA */}
         <div className="mb-8">
           <div className="rounded-2xl p-6 text-center overflow-hidden" style={{ background: "linear-gradient(180deg, rgba(236,72,153,0.40) 0%, rgba(139,0,0,0.60) 100%)" }}>
-            <p className="text-white/70 text-xs uppercase tracking-widest mb-2">Available now</p>
+            <p className="text-white/70 text-xs uppercase tracking-widest mb-2">Beta version</p>
             <h2 className="font-heading text-2xl font-bold text-white mb-2">
-              BaddieMagnet App
+              LoveCheck App
             </h2>
             <p className="text-white/80 text-sm leading-relaxed mb-5">
-              Daily missions, streak tracking, and self-improvement activities — all in one app.
+              Unlock the beta version to keep your girl and improve your relationship.
             </p>
-
-            <div className="bg-white/10 rounded-xl p-4 mb-5">
-              <div className="flex justify-center gap-4 text-white/90 text-sm">
-                <div className="flex items-center gap-1.5">
-                  <span>🔥</span><span>Streaks</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span>❤️</span><span>Points</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span>⭐</span><span>Levels</span>
-                </div>
-              </div>
-            </div>
 
             <a
               href="https://apps.apple.com/fr/app/love-check-app/id6755603323?l=en-GB"
