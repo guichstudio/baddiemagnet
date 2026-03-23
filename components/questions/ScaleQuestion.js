@@ -5,7 +5,7 @@ export default function ScaleQuestion({ question, selected, onSelect }) {
     <div className="space-y-6 text-center">
       <h2 className="text-2xl font-bold leading-snug" style={{ color: "var(--text-100)" }}>{question.text}</h2>
 
-      <div className="flex justify-between items-end gap-1 pt-4 overflow-hidden">
+      <div className="flex justify-between items-start gap-1 pt-4 overflow-hidden">
         {question.scaleLabels.map((label, i) => {
           const value = i + 1;
           const isSelected = selected?.value === value;
@@ -23,7 +23,7 @@ export default function ScaleQuestion({ question, selected, onSelect }) {
               <motion.div
                 className={`w-12 h-12 rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all duration-200 ${
                   isSelected
-                    ? "border-pink-500 bg-pink-500 text-white shadow-[0_0_12px_rgba(236,72,153,0.3)]"
+                    ? "border-orange-500 bg-orange-500 text-white shadow-[0_0_12px_rgba(249,115,22,0.3)]"
                     : "border-white/[0.12] bg-white/[0.04] text-white/40 hover:border-white/25 hover:text-white/60"
                 }`}
                 animate={isSelected ? { scale: [1, 1.2, 1] } : { scale: 1 }}
