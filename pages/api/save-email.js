@@ -17,13 +17,15 @@ export default async function handler(req, res) {
         .from("sessions")
         .select("id")
         .eq("id", sessionId)
+        .eq("app", "baddiemagnet")
         .single();
       if (dbErr || !data) return res.status(404).json({ error: "Session not found" });
 
       await store.client
         .from("sessions")
         .update({ email: email.toLowerCase() })
-        .eq("id", sessionId);
+        .eq("id", sessionId)
+        .eq("app", "baddiemagnet");
     } else {
       const session = store.data[sessionId];
       if (!session) return res.status(404).json({ error: "Session not found" });

@@ -24,6 +24,7 @@ export default async function handler(req, res) {
         .from("sessions")
         .select("id, paid")
         .eq("id", sessionId)
+        .eq("app", "baddiemagnet")
         .single();
       session = data;
     } else if (sessionId && store.type === "memory") {
@@ -33,7 +34,7 @@ export default async function handler(req, res) {
     // Create session if missing or not found in DB
     if (!session) {
       sessionId = sessionId || randomUUID();
-      const row = { id: sessionId, answers: answers || {}, paid: false };
+      const row = { id: sessionId, answers: answers || {}, paid: false, app: "baddiemagnet" };
       if (names) row.names = names;
       if (email) row.email = email.toLowerCase();
 
@@ -44,7 +45,7 @@ export default async function handler(req, res) {
           return res.status(500).json({ error: "Failed to create session" });
         }
       } else {
-        store.data[sessionId] = { ...row, score: null, stripe_session_id: null };
+        store.data[sessionId] = { ...row, score: null, stripe_session_id: null, app: "baddiemagnet" };
       }
       session = { id: sessionId, paid: false };
     } else {
@@ -56,7 +57,7 @@ export default async function handler(req, res) {
 
       if (Object.keys(update).length > 0) {
         if (store.type === "supabase") {
-          await store.client.from("sessions").update(update).eq("id", sessionId);
+          await store.client.from("sessions").update(update).eq("id", sessionId).eq("app", "baddiemagnet");
         } else {
           Object.assign(store.data[sessionId], update);
         }
@@ -103,7 +104,8 @@ export default async function handler(req, res) {
       await store.client
         .from("sessions")
         .update({ stripe_session_id: checkoutSession.id })
-        .eq("id", sessionId);
+        .eq("id", sessionId)
+        .eq("app", "baddiemagnet");
     }
 
     return res.status(200).json({ url: checkoutSession.url });

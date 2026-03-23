@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   const store = getStore();
   if (store.type === "supabase") {
-    await store.client.from("sessions").update({ paid: true }).eq("id", sessionId);
+    await store.client.from("sessions").update({ paid: true }).eq("id", sessionId).eq("app", "baddiemagnet");
   } else {
     if (store.data[sessionId]) store.data[sessionId].paid = true;
   }

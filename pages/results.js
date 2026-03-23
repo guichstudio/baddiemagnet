@@ -591,6 +591,7 @@ export async function getServerSideProps({ query }) {
       .from("sessions")
       .select("*")
       .eq("id", session_id)
+      .eq("app", "baddiemagnet")
       .single();
     if (dbError || !data) return { props: { error: "Session not found.", result: null, premium: null } };
     session = data;
@@ -608,7 +609,7 @@ export async function getServerSideProps({ query }) {
       if (stripeSession.payment_status === "paid") {
         session.paid = true;
         if (store.type === "supabase") {
-          await store.client.from("sessions").update({ paid: true }).eq("id", session_id);
+          await store.client.from("sessions").update({ paid: true }).eq("id", session_id).eq("app", "baddiemagnet");
         } else {
           store.data[session_id].paid = true;
         }
@@ -631,7 +632,8 @@ export async function getServerSideProps({ query }) {
       await store.client
         .from("sessions")
         .update({ score: result.score })
-        .eq("id", session_id);
+        .eq("id", session_id)
+        .eq("app", "baddiemagnet");
     } else {
       store.data[session_id].score = result.score;
     }

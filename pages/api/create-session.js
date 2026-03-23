@@ -14,10 +14,11 @@ export default async function handler(req, res) {
       id: sessionId,
       answers: {},
       paid: false,
+      app: "baddiemagnet",
     });
     if (error) return res.status(500).json({ error: "Failed to create session" });
   } else {
-    store.data[sessionId] = { id: sessionId, answers: {}, paid: false, score: null, stripe_session_id: null };
+    store.data[sessionId] = { id: sessionId, answers: {}, paid: false, score: null, stripe_session_id: null, app: "baddiemagnet" };
   }
 
   return res.status(200).json({ sessionId });

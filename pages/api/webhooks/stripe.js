@@ -52,6 +52,7 @@ export default async function handler(req, res) {
         .from("sessions")
         .select("paid")
         .eq("id", sessionId)
+        .eq("app", "baddiemagnet")
         .single();
       if (existing?.paid) {
         return res.status(200).json({ received: true });
@@ -64,7 +65,8 @@ export default async function handler(req, res) {
       await getSupabase()
         .from("sessions")
         .update(updateData)
-        .eq("id", sessionId);
+        .eq("id", sessionId)
+        .eq("app", "baddiemagnet");
 
       // Send confirmation email with magic link to results
       const email = session.customer_email;

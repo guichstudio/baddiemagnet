@@ -39,6 +39,7 @@ export default async function handler(req, res) {
     .select("id")
     .eq("email", link.email)
     .eq("paid", true)
+    .eq("app", "baddiemagnet")
     .order("created_at", { ascending: false })
     .limit(1)
     .single();

@@ -39,7 +39,8 @@ export default async function handler(req, res) {
       const { error } = await store.client
         .from("sessions")
         .update(update)
-        .eq("id", sessionId);
+        .eq("id", sessionId)
+        .eq("app", "baddiemagnet");
       if (error) return res.status(500).json({ error: "Failed to save answers" });
     } else {
       if (store.data[sessionId]) {
