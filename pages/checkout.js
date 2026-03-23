@@ -111,12 +111,28 @@ export default function Checkout() {
       <div className="flex flex-col items-center text-center pt-8">
         <span className="text-5xl mb-6">🔒</span>
         <h1 className="font-heading text-3xl font-bold mb-4" style={{ color: "var(--text-100)" }}>Your Results Are Ready</h1>
-        <p className="mb-2" style={{ color: "var(--text-40)" }}>
-          You answered all {questions.length} questions.
+        <p className="mb-6" style={{ color: "var(--text-40)" }}>
+          You answered all {questions.length} questions. Here&apos;s a glimpse of what we found:
         </p>
-        <p className="mb-8" style={{ color: "var(--text-40)" }}>
-          Unlock your personalized baddie-readiness score and detailed analysis.
-        </p>
+
+        <div className="w-full rounded-2xl p-6 mb-8 text-left relative overflow-hidden" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-subtle)" }}>
+          <p className="text-sm leading-relaxed mb-2" style={{ color: "var(--text-70)" }}>
+            Your answers reveal a clear pattern. Some areas of your game are holding you back more than you think.
+          </p>
+          <p className="text-sm leading-relaxed mb-2" style={{ color: "var(--text-70)" }}>
+            We identified your #1 blind spot — the one thing baddies notice instantly.
+          </p>
+          <p className="text-sm leading-relaxed mb-2" style={{ color: "var(--text-70)" }}>
+            Your confidence profile shows a specific gap between how you see yourself and how women perceive you.
+          </p>
+          <p className="text-sm leading-relaxed mb-2" style={{ color: "var(--text-40)" }}>
+            The data points to a fixable weakness that, once corrected, could completely change your...
+          </p>
+          <p className="text-sm leading-relaxed" style={{ color: "var(--text-40)" }}>
+            Our 7-day action plan targets exactly where you need to...
+          </p>
+          <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none" style={{ background: "linear-gradient(transparent, rgba(15,15,26,0.95))" }} />
+        </div>
 
         <div className="w-full rounded-2xl p-8 mb-8 text-left space-y-3" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-subtle)" }}>
           <h3 className="font-semibold text-lg mb-3" style={{ color: "var(--text-100)" }}>What you&apos;ll get:</h3>
@@ -154,7 +170,7 @@ export default function Checkout() {
           disabled={loading}
           className="btn-gradient disabled:opacity-50 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-colors w-full"
         >
-          {loading ? "Redirecting to payment..." : "Unlock My Baddie Report — $4.99"}
+          {loading ? "Redirecting to payment..." : "Unlock My Baddie Report $4.99"}
         </button>
 
         <p className="text-xs mt-4 mb-4" style={{ color: "var(--text-40)" }}>
